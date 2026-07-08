@@ -2,11 +2,11 @@
   <div class="page-container">
     <div class="profile-header">
       <div class="user-info">
-        <img :src="currentUser.avatar" class="user-avatar" />
+        <img :src="MAIN_USER_AVATAR" class="user-avatar" />
         <div class="user-details">
-          <span class="user-name">{{ currentUser.name }}</span>
-          <span class="user-role">{{ currentUser.role }}</span>
-          <span class="user-dept">{{ currentUser.department }}</span>
+          <span class="user-name">{{ MAIN_USER_NAME }}</span>
+          <span class="user-role">{{ MAIN_USER_TITLE }}</span>
+          <span class="user-dept">信息中心</span>
         </div>
       </div>
       <i class="fas fa-cog settings-icon"></i>
@@ -74,7 +74,7 @@
 </template>
 
 <script setup>
-import { currentUser } from '../data/people'
+import { MAIN_USER_NAME, MAIN_USER_AVATAR, MAIN_USER_TITLE } from '../data/people'
 
 function handleMenu(type) {
   const menuMap = {

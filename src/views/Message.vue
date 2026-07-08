@@ -34,47 +34,47 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { peopleList } from '../data/people'
+import { getInitialsAvatar, getDemoPerson } from '../data/people'
 
 const searchText = ref('')
 
 const messages = [
   {
     id: 1,
-    name: '王建国',
-    avatar: peopleList[1].avatar,
+    name: getDemoPerson(0),
+    avatar: getInitialsAvatar(getDemoPerson(0)),
     content: '项目方案已经更新，请查看附件。',
     time: '10分钟前',
     badge: 2
   },
   {
     id: 2,
-    name: '李娜',
-    avatar: peopleList[2].avatar,
+    name: getDemoPerson(1),
+    avatar: getInitialsAvatar(getDemoPerson(1)),
     content: '报销单据已审批通过。',
     time: '30分钟前',
     badge: 0
   },
   {
     id: 3,
-    name: '张伟',
-    avatar: peopleList[3].avatar,
+    name: getDemoPerson(2),
+    avatar: getInitialsAvatar(getDemoPerson(2)),
     content: '代码审查发现几个问题，需要修改。',
     time: '1小时前',
     badge: 1
   },
   {
     id: 4,
-    name: '刘芳',
-    avatar: peopleList[4].avatar,
+    name: getDemoPerson(3),
+    avatar: getInitialsAvatar(getDemoPerson(3)),
     content: '本周考勤统计已完成。',
     time: '2小时前',
     badge: 0
   },
   {
     id: 5,
-    name: '陈明',
-    avatar: peopleList[5].avatar,
+    name: getDemoPerson(4),
+    avatar: getInitialsAvatar(getDemoPerson(4)),
     content: '下周工作计划已发布，请确认。',
     time: '昨天',
     badge: 0
@@ -82,15 +82,15 @@ const messages = [
   {
     id: 6,
     name: '系统通知',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=system&backgroundColor=bdbdbd',
+    avatar: getInitialsAvatar('系统通知', 'bdbdbd'),
     content: '您有3条待处理的审批任务。',
     time: '昨天',
     badge: 3
   },
   {
     id: 7,
-    name: '赵丽',
-    avatar: peopleList[6].avatar,
+    name: getDemoPerson(5),
+    avatar: getInitialsAvatar(getDemoPerson(5)),
     content: '会议资料已发送，请查收。',
     time: '2天前',
     badge: 0
