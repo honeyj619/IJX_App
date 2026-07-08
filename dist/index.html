@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>IJX App</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif; background: #f8f8f8; }
+    #app { width: 100%; max-width: 480px; margin: 0 auto; min-height: 100vh; background: #fff; position: relative; }
+    
+    .safe-top { height: env(safe-area-inset-top); background: #fff; }
+    .safe-bottom { height: env(safe-area-inset-bottom); background: #fff; }
+    
+    .tab-bar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; height: 56px; background: #fff; border-top: 1px solid #e8e8e8; display: flex; justify-content: space-around; align-items: center; z-index: 999; }
+    .tab-item { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 20%; height: 100%; color: #999; transition: all 0.2s; }
+    .tab-item.active { color: #d93030; }
+    .tab-item i { font-size: 22px; margin-bottom: 4px; }
+    .tab-item span { font-size: 10px; }
+    
+    .page-container { padding-bottom: 70px; min-height: 100vh; }
+    
+    .header { height: 50px; display: flex; align-items: center; padding: 0 16px; background: #fff; border-bottom: 1px solid #f0f0f0; }
+    .header-title { font-size: 17px; font-weight: 600; flex: 1; text-align: center; }
+    
+    .btn-primary { background: #d93030; color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 15px; }
+    .btn-outline { border: 1px solid #d93030; color: #d93030; background: #fff; border-radius: 8px; padding: 10px 20px; font-size: 15px; }
+    
+    .fab { position: fixed; right: 20px; bottom: 80px; width: 56px; height: 56px; background: #c4a35a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; box-shadow: 0 4px 12px rgba(196, 163, 90, 0.4); z-index: 998; }
+    
+    .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; color: #999; }
+    .empty-icon { width: 120px; height: 120px; margin-bottom: 16px; }
+    .empty-text { font-size: 14px; }
+    
+    .card { background: #fff; border-radius: 12px; padding: 16px; margin: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    
+    .tab-header { display: flex; border-bottom: 1px solid #f0f0f0; }
+    .tab-item-header { flex: 1; text-align: center; padding: 14px 0; font-size: 16px; color: #333; position: relative; }
+    .tab-item-header.active { color: #d93030; }
+    .tab-item-header.active::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 3px; background: linear-gradient(90deg, #d93030, #ff6b6b); border-radius: 2px; }
+    
+    .badge { display: inline-block; min-width: 18px; height: 18px; line-height: 18px; text-align: center; background: #d93030; color: #fff; font-size: 11px; border-radius: 9px; padding: 0 5px; }
+  </style>
+  <script type="module" crossorigin src="/assets/index-BGXeCfx9.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Dicr0hqv.css">
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
