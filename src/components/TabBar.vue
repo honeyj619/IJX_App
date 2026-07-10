@@ -32,9 +32,9 @@ const currentRoute = computed(() => route.name)
 </script>
 
 <style scoped>
-.tab-bar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; height: 56px; background: #fff; border-top: 1px solid #e8e8e8; display: flex; justify-content: space-around; align-items: center; z-index: 999; }
-.tab-item { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 20%; height: 100%; color: #999; transition: all 0.2s; text-decoration: none; }
-.tab-item.active { color: #d93030; }
-.tab-item i { font-size: 22px; margin-bottom: 4px; }
-.tab-item span { font-size: 10px; }
+.tab-bar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; height: 70px; background: #fff; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-around; align-items: flex-start; padding-top: 8px; z-index: 999; padding-bottom: env(safe-area-inset-bottom); }
+.tab-item { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 20%; color: #999; transition: all 0.2s; text-decoration: none; }
+.tab-item.active { color: #ff6b9d; }
+.tab-item i { font-size: 24px; margin-bottom: 3px; }
+.tab-item span { font-size: 11px; font-weight: 500; }
 </style>

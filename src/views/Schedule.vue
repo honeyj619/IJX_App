@@ -192,12 +192,12 @@ function handleAdd() {
 </script>
 
 <style scoped>
-.page-container { padding-bottom: 70px; min-height: 100vh; background: #f8f8f8; }
+.page-container { padding-bottom: 70px; min-height: 100vh; background: #f5f5f5; }
 
 .tab-header { display: flex; background: #fff; border-bottom: 1px solid #f0f0f0; }
-.tab-item-header { flex: 1; text-align: center; padding: 16px 0; font-size: 16px; color: #333; position: relative; }
-.tab-item-header.active { color: #d93030; }
-.tab-item-header.active::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 3px; background: linear-gradient(90deg, #d93030, #ff6b6b); border-radius: 2px; }
+.tab-item-header { flex: 1; text-align: center; padding: 16px 0; font-size: 18px; color: #333; position: relative; font-weight: 500; }
+.tab-item-header.active { color: #333; font-weight: 600; }
+.tab-item-header.active::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 36px; height: 3px; background: linear-gradient(90deg, #ff8aa0, #ff6b9d); border-radius: 2px; }
 
 .calendar-section { background: #fff; margin: 12px; border-radius: 12px; padding: 16px; }
 .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
@@ -210,14 +210,14 @@ function handleAdd() {
 .calendar-days { display: flex; flex-wrap: wrap; }
 .calendar-day { width: 14.28%; padding: 8px 0; display: flex; flex-direction: column; align-items: center; position: relative; }
 .calendar-day.other-month .day-number { color: #ccc; }
-.calendar-day.today { background: #fff0f0; border-radius: 8px; }
-.calendar-day.today .day-number { color: #d93030; font-weight: 600; }
-.calendar-day.selected { background: #ffe4e1; border-radius: 8px; }
-.calendar-day.selected .day-number { color: #d93030; font-weight: 600; }
+.calendar-day.today { background: #fff0f5; border-radius: 8px; }
+.calendar-day.today .day-number { color: #ff6b9d; font-weight: 600; }
+.calendar-day.selected { background: #ffe4ef; border-radius: 8px; }
+.calendar-day.selected .day-number { color: #ff6b9d; font-weight: 600; }
 .day-number { font-size: 14px; color: #333; }
 .day-lunar { font-size: 10px; color: #999; margin-top: 2px; }
-.event-dot { position: absolute; bottom: 2px; width: 4px; height: 4px; background: #d93030; border-radius: 50%; }
-.calendar-day.has-event .day-number { color: #d93030; }
+.event-dot { position: absolute; bottom: 2px; width: 4px; height: 4px; background: #ff6b9d; border-radius: 50%; }
+.calendar-day.has-event .day-number { color: #ff6b9d; }
 
 .schedule-list { padding: 0 12px; }
 .schedule-item { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; display: flex; }
@@ -231,12 +231,12 @@ function handleAdd() {
 
 .task-tabs { display: flex; padding: 12px; gap: 12px; }
 .task-tab { padding: 8px 20px; border-radius: 20px; font-size: 14px; background: #f0f0f0; color: #666; }
-.task-tab.active { background: #fff0f0; color: #d93030; }
-.badge { display: inline-block; min-width: 18px; height: 18px; line-height: 18px; text-align: center; background: #d93030; color: #fff; font-size: 11px; border-radius: 9px; padding: 0 5px; margin-left: 4px; }
+.task-tab.active { background: #fff0f5; color: #ff6b9d; }
+.badge { display: inline-block; min-width: 18px; height: 18px; line-height: 18px; text-align: center; background: linear-gradient(135deg, #ff8aa0, #ff6b9d); color: #fff; font-size: 11px; font-weight: 600; border-radius: 9px; padding: 0 5px; margin-left: 4px; }
 
 .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; color: #999; }
 .empty-icon { width: 120px; height: 120px; }
 .empty-text { font-size: 14px; margin-top: 16px; }
 
-.fab { position: fixed; right: 20px; bottom: 80px; width: 56px; height: 56px; background: #c4a35a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; box-shadow: 0 4px 12px rgba(196, 163, 90, 0.4); z-index: 998; }
+.fab { position: fixed; right: 20px; bottom: 90px; width: 56px; height: 56px; background: linear-gradient(135deg, #ff8aa0, #ff6b9d); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; box-shadow: 0 4px 12px rgba(255, 107, 157, 0.35); z-index: 998; }
 </style>
