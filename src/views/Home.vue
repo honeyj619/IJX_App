@@ -64,10 +64,7 @@
 
     <!-- Report Banner -->
     <div class="report-banner" @click="handleReport">
-      <span class="report-text">点击图片查看2025年度完整报告</span>
-      <span class="report-year">2025</span>
-      <span class="report-title">可持续发展报告</span>
-      <span class="report-sub">上海吉祥航空股份有限公司</span>
+      <span class="banner-placeholder">banner</span>
     </div>
 
     <!-- Docs Tabs -->
@@ -314,11 +311,8 @@ function handleAssistant() { alert('如意助手') }
 .quick-name { font-size: 12px; color: #333; }
 
 /* Report Banner */
-.report-banner { margin: 0 12px 12px; border-radius: 12px; height: 100px; background: linear-gradient(135deg, #f8d4e8 0%, #f0c0e0 50%, #e8a8d8 100%); position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.report-text { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #b85a8a; font-weight: 500; white-space: nowrap; }
-.report-year { font-size: 36px; font-weight: 700; color: #d45a8a; letter-spacing: 2px; }
-.report-title { font-size: 16px; font-weight: 600; color: #b85a8a; margin-top: -4px; }
-.report-sub { font-size: 10px; color: #b85a8a; margin-top: 2px; }
+.report-banner { margin: 0 12px 12px; border-radius: 12px; height: 100px; background: linear-gradient(135deg, #f8d4e8 0%, #f0c0e0 50%, #e8a8d8 100%); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.banner-placeholder { font-size: 24px; color: rgba(255,255,255,0.8); font-weight: 600; letter-spacing: 4px; }
 
 /* Docs Card */
 .docs-card { background: #fff; margin: 0 12px 12px; border-radius: 12px; padding: 16px 0 0; overflow: hidden; }
