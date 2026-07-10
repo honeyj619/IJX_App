@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <!-- Header 紫色渐变区 -->
+    <!-- Header 紫色渐变区（合并banner） -->
     <div class="hero-header">
       <div class="hero-top">
         <div class="city-row">
@@ -20,35 +20,36 @@
         <input type="text" placeholder="快捷服务入口" />
       </div>
 
-      <!-- Stats 4宫格 -->
-      <div class="stats-row">
-        <div class="stat-item" @click="handleStat('未读公文')">
-          <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
-          <span class="stat-label">未读公文</span>
-          <span class="stat-badge">50</span>
+      <!-- 主题文字 + Stats 合并在一张banner中 -->
+      <div class="hero-banner">
+        <div class="banner-text">
+          <span class="theme-title">心有吉祥</span>
+          <span class="theme-sub">如意人生</span>
         </div>
-        <div class="stat-item" @click="handleStat('待办流程')">
-          <div class="stat-icon"><i class="fas fa-check-square"></i></div>
-          <span class="stat-label">待办流程</span>
-          <span class="stat-badge">11</span>
-        </div>
-        <div class="stat-item" @click="handleStat('今日日程')">
-          <div class="stat-icon"><i class="far fa-calendar-check"></i></div>
-          <span class="stat-label">今日日程</span>
-          <span class="stat-badge">2</span>
-        </div>
-        <div class="stat-item" @click="handleStat('我的课程')">
-          <div class="stat-icon"><i class="fas fa-desktop"></i></div>
-          <span class="stat-label">我的课程</span>
-          <span class="stat-badge badge-plus">99+</span>
+        <!-- Stats 4宫格 -->
+        <div class="stats-row">
+          <div class="stat-item" @click="handleStat('未读公文')">
+            <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+            <span class="stat-label">未读公文</span>
+            <span class="stat-badge">50</span>
+          </div>
+          <div class="stat-item" @click="handleStat('待办流程')">
+            <div class="stat-icon"><i class="fas fa-check-square"></i></div>
+            <span class="stat-label">待办流程</span>
+            <span class="stat-badge">11</span>
+          </div>
+          <div class="stat-item" @click="handleStat('今日日程')">
+            <div class="stat-icon"><i class="far fa-calendar-check"></i></div>
+            <span class="stat-label">今日日程</span>
+            <span class="stat-badge">2</span>
+          </div>
+          <div class="stat-item" @click="handleStat('我的课程')">
+            <div class="stat-icon"><i class="fas fa-desktop"></i></div>
+            <span class="stat-label">我的课程</span>
+            <span class="stat-badge badge-plus">99+</span>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- 主题 Banner 区 -->
-    <div class="theme-banner">
-      <span class="theme-title">心有吉祥</span>
-      <span class="theme-sub">如意人生</span>
     </div>
 
     <!-- Quick Apps 6宫格 -->
@@ -275,7 +276,7 @@ function handleAssistant() { alert('如意助手') }
 .page-container { padding-bottom: 70px; min-height: 100vh; background: #f5f5f5; position: relative; }
 
 /* Hero Header */
-.hero-header { background: linear-gradient(180deg, #d4a8e8 0%, #b88ad4 100%); padding: 40px 16px 20px; position: relative; }
+.hero-header { background: linear-gradient(180deg, #d4a8e8 0%, #b88ad4 100%); padding: 40px 16px 0; position: relative; }
 .hero-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .city-row { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 14px; }
 .city-row i { font-size: 13px; }
@@ -288,8 +289,15 @@ function handleAssistant() { alert('如意助手') }
 .hero-search input { flex: 1; border: none; outline: none; font-size: 13px; background: transparent; color: #333; }
 .hero-search input::placeholder { color: #aaa; }
 
+/* Hero Banner（主题文字+Stats合并为一张banner） */
+.hero-banner { background: linear-gradient(135deg, #e8c8f0 0%, #d4a8e8 50%, #c090d8 100%); border-radius: 12px 12px 0 0; padding: 16px 16px 20px; position: relative; overflow: hidden; }
+.hero-banner::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: #f5f5f5; border-radius: 50% 50% 0 0; transform: translateY(15px); }
+.banner-text { display: flex; flex-direction: column; align-items: center; margin-bottom: 12px; }
+.theme-title { font-size: 28px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 2px; }
+.theme-sub { font-size: 22px; font-weight: 600; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
 /* Stats */
-.stats-row { display: flex; justify-content: space-between; padding: 4px 0; }
+.stats-row { display: flex; justify-content: space-between; padding: 4px 0; position: relative; z-index: 1; }
 .stat-item { width: 25%; display: flex; flex-direction: column; align-items: center; position: relative; }
 .stat-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 6px; }
 .stat-icon i { font-size: 28px; }
@@ -297,18 +305,12 @@ function handleAssistant() { alert('如意助手') }
 .stat-badge { position: absolute; top: -4px; right: 12px; min-width: 22px; height: 18px; line-height: 18px; text-align: center; background: #ff3b6b; color: #fff; font-size: 11px; font-weight: 600; border-radius: 9px; padding: 0 6px; }
 .stat-badge.badge-plus { font-size: 10px; }
 
-/* Theme Banner */
-.theme-banner { height: 100px; background: linear-gradient(135deg, #e8c8f0 0%, #d4a8e8 50%, #c090d8 100%); margin: 0 12px; border-radius: 12px 12px 0 0; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-.theme-banner::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: #f5f5f5; border-radius: 50% 50% 0 0; transform: translateY(15px); }
-.theme-title { font-size: 28px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 2px; }
-.theme-sub { font-size: 22px; font-weight: 600; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-
 /* Quick Card */
 .quick-card { background: #fff; margin: -20px 12px 12px; border-radius: 12px; padding: 16px 0 8px; position: relative; z-index: 2; }
 .quick-grid { display: flex; flex-wrap: wrap; }
 .quick-item { width: 20%; display: flex; flex-direction: column; align-items: center; margin-bottom: 12px; }
 .quick-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
-.quick-icon i { font-size: 26px; color: #333; }
+.quick-icon i { font-size: 26px; color: #ff6b9d; }
 .quick-name { font-size: 12px; color: #333; }
 
 /* Report Banner */
