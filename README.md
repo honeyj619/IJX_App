@@ -8,4 +8,4 @@
 
 正式预览入口：`/IJX_Platform/app/prototype/`
 
-本仓库仅作为历史记录保留，不再接受功能开发、设计整改和 Harness 更新。迁移审计报告见主仓 `docs/archive/IJX_APP_MIGRATION_AUDIT.md`（独立仓最终 commit `65a5af3`，主仓接管 commit `754cbdd`）。
+本仓库仅作为历史记录保留，不再接受功能开发、设计整改和 Harness 更新。迁移审计报告见主仓 `docs/archive/IJX_APP_MIGRATION_AUDIT.md`（迁移前基线 `65a5af3`，退役合并提交 `4801fa8`，主仓接管基线 `754cbdd`）。

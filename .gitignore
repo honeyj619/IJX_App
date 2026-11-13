@@ -1,0 +1,4 @@
+# Archived repository: keep local historical residue out of Git status.
+*
+!.gitignore
+!README.md
