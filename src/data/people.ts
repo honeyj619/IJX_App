@@ -6,6 +6,16 @@ export interface Person {
   department: string
 }
 
+export const MAIN_USER_NAME = '梁吉力'
+export const MAIN_USER_AVATAR = 'https://api.dicebear.com/7.x/avataaars/svg?seed=liangjili&backgroundColor=b6e3f4'
+
+export const AVAILABLE_PERSON_NAMES = [
+  '王建国', '李娜', '张伟', '刘芳', '陈明', '赵丽', '孙强',
+  '刘备', '关羽', '张飞', '诸葛亮', '赵云', '马超', '黄忠',
+  '曹操', '司马懿', '夏侯惇', '张辽', '许褚', '徐晃',
+  '孙权', '周瑜', '鲁肃', '陆逊', '吕蒙', '甘宁', '太史慈'
+]
+
 export const currentUser: Person = {
   id: '1',
   name: '梁吉力',
@@ -82,4 +92,20 @@ export function searchPeople(keyword: string): Person[] {
     p.name.includes(keyword) || 
     p.department.includes(keyword)
   )
+}
+
+export function getDemoPerson(name: string): Person {
+  const found = peopleList.find(p => p.name === name)
+  if (found) return found
+  return {
+    id: 'demo-' + name,
+    name,
+    avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(name)}&backgroundColor=b6e3f4`,
+    role: '职员',
+    department: '未分配'
+  }
+}
+
+export function getInitialsAvatar(name: string): string {
+  return `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(name)}&backgroundColor=ffdfbf`
 }
